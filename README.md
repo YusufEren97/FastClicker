@@ -31,6 +31,8 @@ Derlenmeye gerek kalmadan dogrudan kullanmak icin:
 
 [FastClicker.exe indir](Releases/FastClicker.exe)
 
+Not: Dosyayi indirdiginizde Windows SmartScreen uyarisi gorebilirsiniz. Bu, exe dosyasinin imzasiz olmasindan kaynaklanir ve tum bagimsiz gelistiricilerin projelerinde normaldir. Calistirmak icin "Daha fazla bilgi" ve ardindan "Yine de calistir" seceneklerine tiklayin.
+
 ## Gereksinimler
 
 - Windows 7 veya ustu
