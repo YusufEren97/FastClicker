@@ -20,6 +20,8 @@ namespace FastClicker
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnTheme = new System.Windows.Forms.Button();
+            this.pnlButton = new System.Windows.Forms.Panel();
+            this.pnlMode = new System.Windows.Forms.Panel();
             this.statusPanel = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblStatusVal = new System.Windows.Forms.Label();
@@ -39,6 +41,8 @@ namespace FastClicker
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.header.SuspendLayout();
             this.statusPanel.SuspendLayout();
+            this.pnlButton.SuspendLayout();
+            this.pnlMode.SuspendLayout();
             this.SuspendLayout();
             // 
             // header
@@ -243,16 +247,28 @@ namespace FastClicker
             this.lblButton.TabIndex = 6;
             this.lblButton.Text = "Tuş";
             // 
+            // 
+            // pnlButton
+            // 
+            this.pnlButton.BackColor = System.Drawing.Color.Transparent;
+            this.pnlButton.Controls.Add(this.rbLeft);
+            this.pnlButton.Controls.Add(this.rbRight);
+            this.pnlButton.Controls.Add(this.rbMiddle);
+            this.pnlButton.Location = new System.Drawing.Point(140, 245);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Size = new System.Drawing.Size(80, 70);
+            this.pnlButton.TabIndex = 7;
+            // 
             // rbLeft
             // 
             this.rbLeft.AutoSize = true;
             this.rbLeft.Checked = true;
             this.rbLeft.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.rbLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.rbLeft.Location = new System.Drawing.Point(140, 245);
+            this.rbLeft.Location = new System.Drawing.Point(0, 0);
             this.rbLeft.Name = "rbLeft";
             this.rbLeft.Size = new System.Drawing.Size(41, 19);
-            this.rbLeft.TabIndex = 7;
+            this.rbLeft.TabIndex = 0;
             this.rbLeft.TabStop = true;
             this.rbLeft.Text = "Sol";
             // 
@@ -261,10 +277,10 @@ namespace FastClicker
             this.rbRight.AutoSize = true;
             this.rbRight.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.rbRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.rbRight.Location = new System.Drawing.Point(140, 267);
+            this.rbRight.Location = new System.Drawing.Point(0, 22);
             this.rbRight.Name = "rbRight";
             this.rbRight.Size = new System.Drawing.Size(44, 19);
-            this.rbRight.TabIndex = 8;
+            this.rbRight.TabIndex = 1;
             this.rbRight.Text = "Sağ";
             // 
             // rbMiddle
@@ -272,10 +288,10 @@ namespace FastClicker
             this.rbMiddle.AutoSize = true;
             this.rbMiddle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.rbMiddle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.rbMiddle.Location = new System.Drawing.Point(140, 289);
+            this.rbMiddle.Location = new System.Drawing.Point(0, 44);
             this.rbMiddle.Name = "rbMiddle";
             this.rbMiddle.Size = new System.Drawing.Size(48, 19);
-            this.rbMiddle.TabIndex = 9;
+            this.rbMiddle.TabIndex = 2;
             this.rbMiddle.Text = "Orta";
             // 
             // lblMode
@@ -289,16 +305,27 @@ namespace FastClicker
             this.lblMode.TabIndex = 10;
             this.lblMode.Text = "Mod";
             // 
+            // 
+            // pnlMode
+            // 
+            this.pnlMode.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMode.Controls.Add(this.rbHold);
+            this.pnlMode.Controls.Add(this.rbToggle);
+            this.pnlMode.Location = new System.Drawing.Point(140, 355);
+            this.pnlMode.Name = "pnlMode";
+            this.pnlMode.Size = new System.Drawing.Size(80, 50);
+            this.pnlMode.TabIndex = 11;
+            // 
             // rbHold
             // 
             this.rbHold.AutoSize = true;
             this.rbHold.Checked = true;
             this.rbHold.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.rbHold.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.rbHold.Location = new System.Drawing.Point(140, 355);
+            this.rbHold.Location = new System.Drawing.Point(0, 0);
             this.rbHold.Name = "rbHold";
             this.rbHold.Size = new System.Drawing.Size(73, 19);
-            this.rbHold.TabIndex = 11;
+            this.rbHold.TabIndex = 0;
             this.rbHold.TabStop = true;
             this.rbHold.Text = "Basılı Tut";
             // 
@@ -307,10 +334,10 @@ namespace FastClicker
             this.rbToggle.AutoSize = true;
             this.rbToggle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.rbToggle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.rbToggle.Location = new System.Drawing.Point(140, 377);
+            this.rbToggle.Location = new System.Drawing.Point(0, 22);
             this.rbToggle.Name = "rbToggle";
             this.rbToggle.Size = new System.Drawing.Size(70, 19);
-            this.rbToggle.TabIndex = 12;
+            this.rbToggle.TabIndex = 1;
             this.rbToggle.Text = "Aç/Kapa";
             // 
             // timer
@@ -329,12 +356,9 @@ namespace FastClicker
             this.Controls.Add(this.lblTrigger);
             this.Controls.Add(this.btnTrigger);
             this.Controls.Add(this.lblButton);
-            this.Controls.Add(this.rbLeft);
-            this.Controls.Add(this.rbRight);
-            this.Controls.Add(this.rbMiddle);
+            this.Controls.Add(this.pnlButton);
             this.Controls.Add(this.lblMode);
-            this.Controls.Add(this.rbHold);
-            this.Controls.Add(this.rbToggle);
+            this.Controls.Add(this.pnlMode);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             using (var stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("FastClicker.Resources.mouse.ico"))
                 if (stream != null) this.Icon = new System.Drawing.Icon(stream);
@@ -344,6 +368,10 @@ namespace FastClicker
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             this.statusPanel.ResumeLayout(false);
+            this.pnlButton.ResumeLayout(false);
+            this.pnlButton.PerformLayout();
+            this.pnlMode.ResumeLayout(false);
+            this.pnlMode.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +400,7 @@ namespace FastClicker
         private System.Windows.Forms.RadioButton rbToggle;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button btnTheme;
+        private System.Windows.Forms.Panel pnlButton;
+        private System.Windows.Forms.Panel pnlMode;
     }
 }
