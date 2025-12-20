@@ -5,7 +5,7 @@ Windows icin basit ve hafif bir otomatik tiklama uygulamasi.
 ![Screenshot](Screenshot/sc1.png)
 ![Screenshot](Screenshot/sc2.png)
 
-Sadece 26 KB boyutunda, kurulum gerektirmez. Indirin ve calistirin. Karmasik ayarlar veya gereksiz ozellikler yok, sadece ihtiyaciniz olan sade bir arayuz.
+Sadece 27 KB boyutunda, kurulum gerektirmez. Indirin ve calistirin. Karmasik ayarlar veya gereksiz ozellikler yok, sadece ihtiyaciniz olan sade bir arayuz.
 
 ## Ozellikler
 
