@@ -204,6 +204,7 @@ namespace FastClicker
             this.txtCps.ForeColor = System.Drawing.Color.White;
             this.txtCps.Location = new System.Drawing.Point(140, 158);
             this.txtCps.Name = "txtCps";
+            this.txtCps.ShortcutsEnabled = false;
             this.txtCps.Size = new System.Drawing.Size(60, 25);
             this.txtCps.TabIndex = 3;
             this.txtCps.Text = "10";
@@ -362,6 +363,7 @@ namespace FastClicker
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             using (var stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("FastClicker.Resources.mouse.ico"))
                 if (stream != null) this.Icon = new System.Drawing.Icon(stream);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FastClicker";
