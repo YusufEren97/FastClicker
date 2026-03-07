@@ -2,7 +2,7 @@
 
 [Türkçe](#turkce) | [English](#english)
 
-<a name="english"></a>
+<a id="english"></a>
 ## English
 
 A simple and lightweight auto clicker application for Windows.
@@ -67,7 +67,7 @@ This project is published under the MIT license.
 
 ---
 
-<a name="turkce"></a>
+<a id="turkce"></a>
 ## Türkçe
 
 Windows için basit ve hafif bir otomatik tıklama uygulaması.
