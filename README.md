@@ -1,6 +1,6 @@
 # FastClicker
 
-[English](#english) | [Türkçe](#türkçe)
+[Türkçe](#turkce) | [English](#english)
 
 <a name="english"></a>
 ## English
@@ -67,7 +67,7 @@ This project is published under the MIT license.
 
 ---
 
-<a name="türkçe"></a>
+<a name="turkce"></a>
 ## Türkçe
 
 Windows için basit ve hafif bir otomatik tıklama uygulaması.
