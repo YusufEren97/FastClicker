@@ -1,121 +1,82 @@
+<div align="center">
+
 # FastClicker
 
-[Türkçe](#turkce) | [English](#english)
+<img src="Screenshot/sc1.png" alt="FastClicker Dark Mode" width="225"/>
+<img src="Screenshot/sc2.png" alt="FastClicker Light Mode" width="225"/>
 
-<a id="english"></a>
-## English
+### Lightweight Auto Clicker for Windows
 
-A simple and lightweight auto clicker application for Windows.
+[![Version](https://img.shields.io/badge/Version-1.0-blue.svg)](https://github.com/YusufEren97/FastClicker)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/YusufEren97/FastClicker)
+[![.NET](https://img.shields.io/badge/.NET_Framework-4.8-purple.svg)](https://dotnet.microsoft.com/)
+[![Windows](https://img.shields.io/badge/Windows-7%2F10%2F11-0078D6.svg?logo=windows)](https://www.microsoft.com/windows)
 
-![Screenshot](Screenshot/sc1.png)
-![Screenshot](Screenshot/sc2.png)
+**Only 27 KB. No installation required. Just download and run.**
 
-Only 27 KB in size, no installation required. Just download and run. No complex settings or unnecessary features, just the simple interface you need.
+[English](#features) • [Türkçe](#özellikler)
 
-### Features
-
-- Adjustable clicking speed (CPS)
-- Left, Right, and Middle mouse button support
-- Hold or Toggle modes
-- Customizable trigger key
-- Dark and Light theme options
-- Turkish and English language support
-- Draggable window
-
-### Usage
-
-1. Enter CPS (clicks per second) value
-2. Select trigger key (default F6)
-3. Select mouse button (Left/Right/Middle)
-4. Select mode (Hold or Toggle)
-5. Press trigger key
-
-### Download
-
-To use directly without compiling:
-
-[Download FastClicker.exe](Releases/FastClicker.exe)
-
-**Note:** You may see a Windows SmartScreen warning when downloading. This is due to the exe file being unsigned, which is normal for independent developer projects. Click "More info" and then "Run anyway" to run.
-
-### Requirements
-
-- Windows 7 or higher
-- .NET Framework 4.8 (installed by default on Windows 10 and 11)
-
-### Technologies
-
-- C# (.NET Framework 4.8)
-- Windows Forms
-- user32.dll (mouse_event, GetAsyncKeyState)
-
-### Build
-
-If you want to compile the project yourself:
-
-```bash
-git clone https://github.com/YusufEren97/FastClicker.git
-cd FastClicker
-dotnet build -c Release
-```
-
-The compiled file will be created at `bin\Release\net48\FastClicker.exe`.
-
-### License
-
-This project is published under the MIT license.
+</div>
 
 ---
 
-<a id="turkce"></a>
-## Türkçe
+## Features
 
-Windows için basit ve hafif bir otomatik tıklama uygulaması.
+| Feature | Description |
+|---------|-------------|
+| Adjustable Speed | Set clicks per second (CPS) to any value |
+| Mouse Buttons | Left, Right, and Middle button support |
+| Two Modes | Hold (click while holding) or Toggle (press to start/stop) |
+| Custom Trigger | Assign any key as the trigger (default: F6) |
+| Theme Support | Dark and Light mode |
+| Multi-Language | Turkish and English interface |
+| Portable | Single 27 KB executable, no installation needed |
 
+---
 
+## Quick Start
 
-Sadece 27 KB boyutunda, kurulum gerektirmez. İndirin ve çalıştırın. Karmaşık ayarlar veya gereksiz özellikler yok, sadece ihtiyacınız olan sade bir arayüz.
+1. [Download FastClicker.exe](Releases/FastClicker.exe) and run
+2. Set your desired CPS value
+3. Choose mouse button and mode
+4. Press **F6** (or your custom trigger) to start clicking
 
-### Özellikler
+> [!IMPORTANT]
+> You may see a Windows SmartScreen warning when running. This is because the exe is unsigned, which is normal for independent developer projects. Click **"More info"** then **"Run anyway"**.
 
-- Ayarlanabilir tıklama hızı (CPS)
-- Sol, sağ ve orta fare tuşu desteği
-- Basılı tut veya aç/kapa modları
-- Özelleştirilebilir tetikleyici tuşu
-- Karanlık ve aydınlık tema seçeneği
-- Türkçe ve İngilizce dil desteği
-- Pencere sürüklenebilir
+---
 
-### Kullanım
+## Tech Stack
 
-1. CPS (saniyedeki tıklama sayısı) değerini girin
-2. Tetikleyici tuşunu seçin (varsayılan F6)
-3. Fare tuşunu seçin (Sol/Sağ/Orta)
-4. Modu seçin (Basılı Tut veya Aç/Kapa)
-5. Tetikleyici tuşuna basın
+| Component | Technology |
+|-----------|------------|
+| **Language** | C# (.NET Framework 4.8) |
+| **UI** | Windows Forms |
+| **Native API** | user32.dll (mouse_event, GetAsyncKeyState) |
 
-### İndirme
+---
 
-Derlenmeye gerek kalmadan doğrudan kullanmak için:
+## Project Structure
 
-[FastClicker.exe indir](Releases/FastClicker.exe)
+```
+FastClicker/
+├── MainForm.cs              # Application logic
+├── MainForm.Designer.cs     # UI layout
+├── MainForm.resx            # Form resources
+├── Program.cs               # Entry point
+├── FastClicker.csproj       # Project file
+├── FastClicker.sln          # Solution file
+├── Screenshot/              # README images
+│   ├── sc1.png
+│   └── sc2.png
+├── Releases/
+│   └── FastClicker.exe      # Pre-built binary
+└── README.md
+```
 
-**Not:** Dosyayı indirdiğinizde Windows SmartScreen uyarısı görebilirsiniz. Bu, exe dosyasının imzasız olmasından kaynaklanır ve tüm bağımsız geliştiricilerin projelerinde normaldir. Çalıştırmak için "Daha fazla bilgi" ve ardından "Yine de çalıştır" seçeneklerine tıklayın.
+---
 
-### Gereksinimler
-
-- Windows 7 veya üstü
-- .NET Framework 4.8 (Windows 10 ve 11'de varsayılan olarak yüklü)
-
-### Teknolojiler
-
-- C# (.NET Framework 4.8)
-- Windows Forms
-- user32.dll (mouse_event, GetAsyncKeyState)
-
-### Derleme
-
-Projeyi kendiniz derlemek isterseniz:
+## Build
 
 ```bash
 git clone https://github.com/YusufEren97/FastClicker.git
@@ -123,8 +84,83 @@ cd FastClicker
 dotnet build -c Release
 ```
 
-Derlenen dosya `bin\Release\net48\FastClicker.exe` konumunda oluşur.
+Output: `bin\Release\net48\FastClicker.exe`
+
+---
+
+## Requirements
+
+| Component | Requirement |
+|-----------|-------------|
+| **OS** | Windows 7 or later |
+| **Runtime** | .NET Framework 4.8 (pre-installed on Windows 10/11) |
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+<div align="center">
+
+## Author
+
+| <img src="https://github.com/YusufEren97.png" width="120" style="border-radius:50%"/> |
+|:---:|
+| **Yusuf Eren Seyrek** |
+| [![GitHub](https://img.shields.io/badge/GitHub-YusufEren97-black?logo=github)](https://github.com/YusufEren97) |
+
+</div>
+
+---
+
+<a id="özellikler"></a>
+
+## Türkçe
+
+Windows için basit ve hafif bir otomatik tıklama uygulaması. Sadece 27 KB, kurulum gerektirmez.
+
+### Özellikler
+
+| Özellik | Açıklama |
+|---------|----------|
+| Ayarlanabilir Hız | Saniyedeki tıklama sayısını (CPS) belirleyin |
+| Fare Tuşları | Sol, Sağ ve Orta tuş desteği |
+| İki Mod | Basılı Tut veya Aç/Kapa |
+| Özel Tetikleyici | Herhangi bir tuşu tetikleyici olarak atayın (varsayılan: F6) |
+| Tema Desteği | Karanlık ve Aydınlık mod |
+| Çift Dil | Türkçe ve İngilizce arayüz |
+| Taşınabilir | Tek 27 KB dosya, kurulum gereksiz |
+
+### Kullanım
+
+1. [FastClicker.exe indir](Releases/FastClicker.exe) ve çalıştır
+2. İstediğiniz CPS değerini girin
+3. Fare tuşunu ve modu seçin
+4. Tıklamayı başlatmak için **F6** tuşuna basın (veya belirlediğiniz tetikleyici)
+
+> [!IMPORTANT]
+> Çalıştırırken Windows SmartScreen uyarısı görebilirsiniz. Bu, exe dosyasının imzasız olmasından kaynaklanır ve bağımsız geliştirici projeleri için normaldir. **"Daha fazla bilgi"** ve ardından **"Yine de çalıştır"** seçeneklerine tıklayın.
+
+### Derleme
+
+```bash
+git clone https://github.com/YusufEren97/FastClicker.git
+cd FastClicker
+dotnet build -c Release
+```
+
+Çıktı: `bin\Release\net48\FastClicker.exe`
+
+### Gereksinimler
+
+| Bileşen | Gereksinim |
+|---------|------------|
+| **İşletim Sistemi** | Windows 7 veya üstü |
+| **Çalışma Zamanı** | .NET Framework 4.8 (Windows 10/11'de yüklü gelir) |
 
 ### Lisans
 
-Bu proje MIT lisansı altında yayınlanmıştır.
+Bu proje **MIT Lisansı** altında yayınlanmıştır.
