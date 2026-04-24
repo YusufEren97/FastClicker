@@ -8,10 +8,30 @@ namespace FastClicker
 {
     public partial class MainForm : Form
     {
-        [DllImport("user32.dll")] static extern void mouse_event(int f, int x, int y, int d, int e);
+        [DllImport("user32.dll", SetLastError = true)] static extern uint SendInput(uint n, INPUT[] inputs, int size);
         [DllImport("user32.dll")] static extern short GetAsyncKeyState(int k);
         [DllImport("user32.dll")] static extern bool ReleaseCapture();
         [DllImport("user32.dll")] static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("user32.dll")] static extern IntPtr GetMessageExtraInfo();
+
+        [StructLayout(LayoutKind.Sequential)]
+        struct MOUSEINPUT
+        {
+            public int dx, dy, mouseData, dwFlags, time;
+            public IntPtr dwExtraInfo;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        struct INPUT
+        {
+            public uint type;
+            public MOUSEINPUT mi;
+        }
+
+        const uint INPUT_MOUSE = 0;
+        const int MOUSEEVENTF_LEFTDOWN = 0x0002, MOUSEEVENTF_LEFTUP = 0x0004;
+        const int MOUSEEVENTF_RIGHTDOWN = 0x0008, MOUSEEVENTF_RIGHTUP = 0x0010;
+        const int MOUSEEVENTF_MIDDLEDOWN = 0x0020, MOUSEEVENTF_MIDDLEUP = 0x0040;
 
         bool _run, _set, _tr = true, _dark = true;
         int _key = 117;
@@ -134,21 +154,32 @@ namespace FastClicker
 
             bool hold = rbHold.Checked;
             int delay = int.TryParse(txtCps.Text, out int c) && c > 0 ? 1000 / c : 100;
-            int flag = rbRight.Checked ? 0x18 : rbMiddle.Checked ? 0x60 : 0x06;
+            int flagDown = rbRight.Checked ? MOUSEEVENTF_RIGHTDOWN : rbMiddle.Checked ? MOUSEEVENTF_MIDDLEDOWN : MOUSEEVENTF_LEFTDOWN;
+            int flagUp = rbRight.Checked ? MOUSEEVENTF_RIGHTUP : rbMiddle.Checked ? MOUSEEVENTF_MIDDLEUP : MOUSEEVENTF_LEFTUP;
 
             _run = true;
             if (!hold) while ((GetAsyncKeyState(_key) & 0x8000) != 0) { Application.DoEvents(); Thread.Sleep(10); }
 
             new Thread(() => {
+                int sz = Marshal.SizeOf(typeof(INPUT));
                 while (_run) {
                     if (hold && (GetAsyncKeyState(_key) & 0x8000) == 0) break;
                     if (!hold && (GetAsyncKeyState(_key) & 0x8000) != 0) {
                         while ((GetAsyncKeyState(_key) & 0x8000) != 0) Thread.Sleep(10);
                         break;
                     }
-                    mouse_event(flag, 0, 0, 0, 0);
+                    var extra = GetMessageExtraInfo();
+                    var down = new INPUT { type = INPUT_MOUSE, mi = new MOUSEINPUT { dwFlags = flagDown, dwExtraInfo = extra } };
+                    var up = new INPUT { type = INPUT_MOUSE, mi = new MOUSEINPUT { dwFlags = flagUp, dwExtraInfo = extra } };
+                    
+                    int clickDuration = Math.Min(25, Math.Max(1, delay / 2));
+                    int restDelay = Math.Max(0, delay - clickDuration);
+
+                    SendInput(1, new[] { down }, sz);
+                    Thread.Sleep(clickDuration);
+                    SendInput(1, new[] { up }, sz);
                     Interlocked.Increment(ref _count);
-                    Thread.Sleep(delay);
+                    if (restDelay > 0) Thread.Sleep(restDelay);
                 }
                 _run = false;
             }).Start();
